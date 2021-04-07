@@ -1,0 +1,113 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Muhimbi PDF",
+    "description": "Convert, Merge, Watermark, Secure and OCR files.",
+    "version": "9.9"
+  },
+  "host": "api.muhimbi.com",
+  "schemes": [
+    "https"
+  ],
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "name": "api_key",
+      "in": "header"
+    }
+  },
+  "security": [
+    {
+      "api_key": []
+    }
+  ],
+  "paths": {
+    "/api/v1/operations/convert": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Convert"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/Output"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Sharepoint_file": {
+      "properties": {
+        "site_url": {
+          "type": "string"
+        },
+        "source_file_url": {
+          "type": "string"
+        },
+        "destination_file_url": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "Convert": {
+      "properties": {
+        "use_async_pattern": {
+          "type": "boolean"
+        },
+        "sharepoint_file": {
+          "$ref": "#/definitions/Sharepoint_file"
+        },
+        "output_format": {
+          "type": "string"
+        },
+        "override_settings": {
+          "type": "string"
+        },
+        "fail_on_error": {
+          "type": "boolean"
+        }
+      }
+    },
+    "Output": {
+      "properties": {
+        "result_code": {
+          "type": "string"
+        },
+        "result_details": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
