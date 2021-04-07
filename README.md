@@ -1,3 +1,3 @@
 # Blogs
 
-This repository contains samples used in my blog - https://clavinfernandes.wordpress.com/
+This repository contains samples from blog posts- https://clavinfernandes.wordpress.com/
