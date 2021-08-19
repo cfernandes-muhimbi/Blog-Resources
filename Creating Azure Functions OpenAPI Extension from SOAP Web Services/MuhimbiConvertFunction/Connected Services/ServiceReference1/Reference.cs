@@ -7483,7 +7483,7 @@ namespace ServiceReference1
         {
             if ((endpointConfiguration == EndpointConfiguration.BasicHttpBinding_DocumentConverterService))
             {
-                return new System.ServiceModel.EndpointAddress("http://13.92.26.7:41734/Muhimbi.DocumentConverter.WebService/");
+                return new System.ServiceModel.EndpointAddress("http://your_server_ip:41734/Muhimbi.DocumentConverter.WebService/");
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }
