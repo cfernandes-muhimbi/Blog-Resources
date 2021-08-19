@@ -18,7 +18,7 @@ namespace MuhimbiConvertFunction
 {
     public static class Function1
     {
-        static string SERVICE_URL = "http://52.170.83.251:41734/Muhimbi.DocumentConverter.WebService/";
+        static string SERVICE_URL = "http://your_ip_address:41734/Muhimbi.DocumentConverter.WebService/";
 
         [FunctionName("ConvertToPDF")]
         [OpenApiOperation(operationId: "ConvertToPDF")]
