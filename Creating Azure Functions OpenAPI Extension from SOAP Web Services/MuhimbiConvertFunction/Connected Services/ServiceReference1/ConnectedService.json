@@ -6,7 +6,7 @@
   },
   "ExtendedData": {
     "inputs": [
-      "http://13.92.26.7:41734/Muhimbi.DocumentConverter.WebService/?wsdl"
+      "http://your_server_ip/Muhimbi.DocumentConverter.WebService/?wsdl"
     ],
     "collectionTypes": [
       "System.Array",
