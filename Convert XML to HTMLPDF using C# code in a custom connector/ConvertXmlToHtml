@@ -1,0 +1,36 @@
+swagger: '2.0'
+info: {title: CustomCode, description: Custom Code, version: '1.0'}
+host: test.net
+basePath: /
+schemes: [https]
+consumes: []
+produces: []
+paths:
+  /ConvertXmlToHtml:
+    post:
+      responses:
+        default:
+          description: default
+          schema: {}
+      summary: ConvertXmlToHtml
+      description: ConvertXmlToHtml
+      operationId: XMLTOHTML
+      parameters:
+      - name: value
+        in: body
+        required: true
+        schema: {$ref: '#/definitions/xmlxslt_data'}
+      x-ms-visibility: important
+definitions:
+  xmlxslt_data:
+    required: [inputXml, xsltString]
+    properties:
+      inputXml: {description: XML Input, type: string, x-ms-visibility: important}
+      xsltString: {description: XSLT Input, type: string, x-ms-visibility: important}
+    format: xmlxslt_data
+    type: object
+parameters: {}
+responses: {}
+securityDefinitions: {}
+security: []
+tags: []

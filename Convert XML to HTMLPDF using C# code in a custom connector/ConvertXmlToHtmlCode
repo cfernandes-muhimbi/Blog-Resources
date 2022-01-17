@@ -1,0 +1,43 @@
+public class Script : ScriptBase
+{
+ public override async Task<HttpResponseMessage> ExecuteAsync()
+{
+    // Check if the operation ID matches what is specified in the OpenAPI definition of the connector
+    if (this.Context.OperationId == "XMLTOHTML")
+    {
+        return await this.HandleXmltoHtml().ConfigureAwait(false);
+    }
+    // Handle an invalid operation ID
+    HttpResponseMessage response = new HttpResponseMessage(HttpStatusCode.BadRequest);
+    response.Content = CreateJsonContent($"Unknown operation ID '{this.Context.OperationId}'");
+    return response;
+}
+private async Task<HttpResponseMessage> HandleXmltoHtml()
+{
+    HttpResponseMessage response;
+    var strXmlXslt = await this.Context.Request.Content.ReadAsStringAsync().ConfigureAwait(false);
+    
+    // Parse as JSON object
+    var contentAsJson = JObject.Parse(strXmlXslt);
+
+    // Get the value of text to check
+    var xsltString = (string)contentAsJson["xsltString"];
+    var inputXml = (string)contentAsJson["inputXml"];
+    System.Xml.Xsl.XslCompiledTransform transform = new System.Xml.Xsl.XslCompiledTransform();
+
+    using(XmlReader reader = XmlReader.Create(new StringReader(xsltString))) {
+        transform.Load(reader);
+    }
+
+    StringWriter results = new StringWriter();
+
+    using(XmlReader reader = XmlReader.Create(new StringReader(inputXml.ToString()))) {
+      transform.Transform(reader, null, results);
+    }
+  
+    //String  C = "Clavi";
+    response = new HttpResponseMessage(HttpStatusCode.OK);
+    response.Content =  new StringContent(results.ToString());
+    return response; 
+    }
+}
