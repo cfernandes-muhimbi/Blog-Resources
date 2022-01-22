@@ -35,7 +35,6 @@ private async Task<HttpResponseMessage> HandleXmltoHtml()
       transform.Transform(reader, null, results);
     }
   
-    //String  C = "Clavi";
     response = new HttpResponseMessage(HttpStatusCode.OK);
     response.Content =  new StringContent(results.ToString());
     return response; 
