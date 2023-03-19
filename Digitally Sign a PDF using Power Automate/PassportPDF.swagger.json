@@ -1,0 +1,309 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "PassportPDF",
+    "description": "",
+    "version": "1.0"
+  },
+  "host": "passportpdfapi.com",
+  "basePath": "/api/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/pdf/ClosePDF": {
+      "post": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Error": {
+                  "type": "object",
+                  "properties": {
+                    "ResultCode": {
+                      "type": "string",
+                      "description": "ResultCode"
+                    },
+                    "ExtResultStatus": {
+                      "type": "string",
+                      "description": "ExtResultStatus"
+                    },
+                    "ExtResultMessage": {
+                      "type": "string",
+                      "description": "ExtResultMessage"
+                    },
+                    "InternalErrorId": {
+                      "type": "string",
+                      "description": "InternalErrorId"
+                    }
+                  },
+                  "description": "Error"
+                },
+                "RemainingTokens": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "RemainingTokens"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Close PDF",
+        "description": "Closes a previously uploaded document.",
+        "operationId": "ClosePDF",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "FileId": {
+                  "type": "string",
+                  "description": "FileId"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/pdf/DigiSign": {
+      "post": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Error": {
+                  "type": "object",
+                  "properties": {
+                    "ResultCode": {
+                      "type": "string",
+                      "description": "ResultCode"
+                    },
+                    "ExtResultStatus": {
+                      "type": "string",
+                      "description": "ExtResultStatus"
+                    },
+                    "ExtResultMessage": {
+                      "type": "string",
+                      "description": "ExtResultMessage"
+                    },
+                    "InternalErrorId": {
+                      "type": "string",
+                      "description": "InternalErrorId"
+                    }
+                  },
+                  "description": "Error"
+                },
+                "RemainingTokens": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "RemainingTokens"
+                }
+              }
+            }
+          }
+        },
+        "summary": "DigiSign",
+        "description": "Signs a previously uploaded document digitally.",
+        "operationId": "DigiSign",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "FileId": {
+                  "type": "string",
+                  "description": "FileId"
+                },
+                "CertificateData": {
+                  "type": "string",
+                  "format": "byte",
+                  "description": "CertificateData"
+                },
+                "CertificatePassword": {
+                  "type": "string",
+                  "description": "CertificatePassword"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/document/DocumentLoad": {
+      "post": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Error": {
+                  "type": "object",
+                  "properties": {
+                    "ResultCode": {
+                      "type": "string",
+                      "description": "ResultCode"
+                    },
+                    "ExtResultStatus": {
+                      "type": "string",
+                      "description": "ExtResultStatus"
+                    },
+                    "ExtResultMessage": {
+                      "type": "string",
+                      "description": "ExtResultMessage"
+                    },
+                    "InternalErrorId": {
+                      "type": "string",
+                      "description": "InternalErrorId"
+                    }
+                  },
+                  "description": "Error"
+                },
+                "RemainingTokens": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "RemainingTokens"
+                },
+                "FileId": {
+                  "type": "string",
+                  "description": "FileId"
+                },
+                "DocumentFormat": {
+                  "type": "string",
+                  "description": "DocumentFormat"
+                },
+                "PageCount": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "PageCount"
+                },
+                "ThumbnailData": {
+                  "type": "string",
+                  "description": "ThumbnailData"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Document Load",
+        "description": "Loads the provided document file.",
+        "operationId": "DocumentLoad",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Content": {
+                  "type": "string",
+                  "format": "byte",
+                  "description": "Content"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/pdf/SaveDocument": {
+      "post": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Error": {
+                  "type": "object",
+                  "properties": {
+                    "ResultCode": {
+                      "type": "string",
+                      "description": "ResultCode"
+                    },
+                    "ExtResultStatus": {
+                      "type": "string",
+                      "description": "ExtResultStatus"
+                    },
+                    "ExtResultMessage": {
+                      "type": "string",
+                      "description": "ExtResultMessage"
+                    },
+                    "InternalErrorId": {
+                      "type": "string",
+                      "description": "InternalErrorId"
+                    }
+                  },
+                  "description": "Error"
+                },
+                "RemainingTokens": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "RemainingTokens"
+                },
+                "Data": {
+                  "type": "string",
+                  "format": "byte",
+                  "description": "Data"
+                },
+                "FileName": {
+                  "type": "string",
+                  "description": "FileName"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Save Document",
+        "description": "Saves a previously uploaded document as PDF, and sends the file data in a JSON-serialized object.",
+        "operationId": "SaveDocument",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "FileId": {
+                  "type": "string",
+                  "description": "FileId"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {
+    "API Key": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "X-PassportPDF-API-Key"
+    }
+  },
+  "security": [
+    {
+      "API Key": []
+    }
+  ],
+  "tags": []
+}
