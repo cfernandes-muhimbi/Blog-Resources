@@ -1,0 +1,102 @@
+/* Center the content */
+.page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f3f3f3; /* Microsoft-like neutral background */
+}
+
+/* Button - Fluent UI Style with Border */
+.glow-button {
+    width: 64px;
+    height: 64px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 8px; /* Fluent-style rounded corners */
+    background-color: #0078d4; /* Microsoft Fluent primary color */
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border: 2px solid transparent; /* Initial border */
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom border effect */
+.glow-button::before {
+    content: "";
+    position: absolute;
+    inset: -4px; /* Outer border */
+    border-radius: 12px;
+    border: 2px solid rgba(0, 120, 212, 0.5); /* Subtle Fluent blue border */
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* Hover effect - Fluent UI */
+.glow-button:hover {
+    background-color: #005a9e; /* Darker Fluent Blue */
+    border-color: #005a9e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.glow-button:hover::before {
+    opacity: 1; /* Show outer border on hover */
+}
+
+/* Click effect */
+.glow-button:active {
+    background-color: #004578;
+    transform: scale(0.98);
+}
+
+/* Focus effect - Accessibility */
+.glow-button:focus {
+    border-color: white;
+    outline: 3px solid rgba(255, 255, 255, 0.6);
+}
+
+/* Popover container */
+.popover-content {
+    padding: 16px 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid #e1e1e1;
+    text-align: center;
+    position: absolute;
+    top: 80px; /* Adjust based on placement */
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 200px;
+    z-index: 100;
+    animation: popoverShow 0.2s ease-out;
+}
+
+/* Popover header */
+.content-header {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #0078d4;
+    border-bottom: 2px solid #0078d4;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+/* Popover animation */
+@keyframes popoverShow {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

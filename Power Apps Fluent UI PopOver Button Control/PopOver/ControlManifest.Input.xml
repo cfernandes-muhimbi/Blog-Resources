@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="ReactPopOverNameSpace" constructor="PopOver" version="0.0.2" display-name-key="PopOver" description-key="PopOver description" control-type="virtual" >
+    <external-service-usage enabled="false">
+    </external-service-usage>
+    <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
+    <property name="popOverHeading" display-name-key="popOverHeading" description-key="popOverHeadingProperty" of-type="SingleLine.Text" usage="bound" required="true" />
+    <property name="popOverButton" display-name-key="popOverButton" description-key="popOverButtonProperty" of-type="SingleLine.Text" usage="bound" required="true" />
+    <property name="popOverSubHeading" display-name-key="popOverSubHeading" description-key="popOverSubHeadingProperty" of-type="SingleLine.Text" usage="bound" required="true" />
+    <resources>
+      <code path="index.ts" order="1"/>
+      <platform-library name="React" version="16.14.0" />
+      <platform-library name="Fluent" version="9.46.2" />
+      <css path="css/PopOver.css" order="1" />
+      <!-- UNCOMMENT TO ADD MORE RESOURCES
+      <css path="css/PopOver.css" order="1" />
+      <resx path="strings/PopOver.1033.resx" version="1.0.0" />
+      -->
+    </resources>
+  </control>
+</manifest>
