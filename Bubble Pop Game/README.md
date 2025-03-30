@@ -1,9 +1,9 @@
 # Power Apps Games for Kid 🫧 Bubble Popper Game
 
-![Bubble Popper Demo](https://your-gif-link-here.com/demo.gif)
-
 Welcome to **Bubble Popper**, a simple and fun game built using **HTML** and **CSS**.  
 Get stress-free by popping bubbles—just like popping bubble wrap!
+
+![Bubble Popper Demo](https://github.com/cfernandes-muhimbi/Blog-Resources/blob/main/Bubble%20Pop%20Game/assets/BubblePop.gif)
 
 ---
 
