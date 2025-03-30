@@ -1,9 +1,10 @@
 # 🧠 Power Apps Games for Kids – Color Match Game 🎨🍓
 
-![Color Match Game](https://github.com/cfernandes-muhimbi/Blog-Resources/blob/main/Color%20Match%20Game%20for%20Kids/assets/ColorMatch.gif)
-
 A drag-and-drop **Color Match Game** built using Power Apps + PCF (PowerApps Component Framework).  
+
 Kids drag fruit emojis 🍎🍌🍇 to their matching color boxes (red, yellow, green, etc.).
+
+![Color Match Game](https://github.com/cfernandes-muhimbi/Blog-Resources/blob/main/Color%20Match%20Game%20for%20Kids/assets/ColorMatch.gif)
 
 ---
 
