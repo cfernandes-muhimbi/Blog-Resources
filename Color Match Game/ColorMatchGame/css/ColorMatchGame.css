@@ -1,0 +1,82 @@
+/* Avoid applying layout styles to PowerApps container directly */
+:host {
+    all: initial;
+    font-family: sans-serif;
+  }
+  
+  /* Main container */
+  body {
+    font-family: sans-serif;
+    background: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Layout for fruits and boxes */
+  .game-area {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  /* Drop target boxes */
+  .color-box {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    user-select: none;
+    pointer-events: all;
+  }
+  
+  /* Color styles */
+  .color-red { background: red; }
+  .color-yellow { background: gold; }
+  .color-green { background: green; }
+  .color-blue { background: blue; }
+  .color-orange { background: orange; }
+  .color-purple { background: purple; }
+  
+  /* Draggable fruit items */
+  .fruit {
+    width: 100px;
+    height: 100px;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: grab;
+    transition: transform 0.3s ease;
+    user-select: none;
+    pointer-events: auto;
+  }
+  
+  /* Animation for correct match */
+  .dancing {
+    animation: dance 0.5s infinite alternate;
+  }
+  
+  /* Counters */
+  #counter,
+  #timer {
+    font-size: 24px;
+    margin-top: 10px;
+  }
+  
+  /* Wiggle effect */
+  @keyframes dance {
+    from { transform: rotate(-10deg); }
+    to { transform: rotate(10deg); }
+  }
+  
