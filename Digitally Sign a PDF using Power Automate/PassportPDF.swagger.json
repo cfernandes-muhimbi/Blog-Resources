@@ -4,7 +4,7 @@ info:
   description: >-
     Operations for loading, converting, saving, signing and extracting content
     from documents.
-  version: '1.0'
+  version: '1.1'
 host: passportpdfapi.com
 basePath: /api/
 schemes:
