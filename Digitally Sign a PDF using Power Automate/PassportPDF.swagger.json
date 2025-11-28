@@ -1,309 +1,305 @@
-{
-  "swagger": "2.0",
-  "info": {
-    "title": "PassportPDF",
-    "description": "",
-    "version": "1.0"
-  },
-  "host": "passportpdfapi.com",
-  "basePath": "/api/",
-  "schemes": [
-    "https"
-  ],
-  "consumes": [],
-  "produces": [],
-  "paths": {
-    "/pdf/ClosePDF": {
-      "post": {
-        "responses": {
-          "default": {
-            "description": "default",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "Error": {
-                  "type": "object",
-                  "properties": {
-                    "ResultCode": {
-                      "type": "string",
-                      "description": "ResultCode"
-                    },
-                    "ExtResultStatus": {
-                      "type": "string",
-                      "description": "ExtResultStatus"
-                    },
-                    "ExtResultMessage": {
-                      "type": "string",
-                      "description": "ExtResultMessage"
-                    },
-                    "InternalErrorId": {
-                      "type": "string",
-                      "description": "InternalErrorId"
-                    }
-                  },
-                  "description": "Error"
-                },
-                "RemainingTokens": {
-                  "type": "integer",
-                  "format": "int32",
-                  "description": "RemainingTokens"
-                }
-              }
-            }
-          }
-        },
-        "summary": "Close PDF",
-        "description": "Closes a previously uploaded document.",
-        "operationId": "ClosePDF",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": false,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "FileId": {
-                  "type": "string",
-                  "description": "FileId"
-                }
-              }
-            }
-          }
-        ]
-      }
-    },
-    "/pdf/DigiSign": {
-      "post": {
-        "responses": {
-          "default": {
-            "description": "default",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "Error": {
-                  "type": "object",
-                  "properties": {
-                    "ResultCode": {
-                      "type": "string",
-                      "description": "ResultCode"
-                    },
-                    "ExtResultStatus": {
-                      "type": "string",
-                      "description": "ExtResultStatus"
-                    },
-                    "ExtResultMessage": {
-                      "type": "string",
-                      "description": "ExtResultMessage"
-                    },
-                    "InternalErrorId": {
-                      "type": "string",
-                      "description": "InternalErrorId"
-                    }
-                  },
-                  "description": "Error"
-                },
-                "RemainingTokens": {
-                  "type": "integer",
-                  "format": "int32",
-                  "description": "RemainingTokens"
-                }
-              }
-            }
-          }
-        },
-        "summary": "DigiSign",
-        "description": "Signs a previously uploaded document digitally.",
-        "operationId": "DigiSign",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": false,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "FileId": {
-                  "type": "string",
-                  "description": "FileId"
-                },
-                "CertificateData": {
-                  "type": "string",
-                  "format": "byte",
-                  "description": "CertificateData"
-                },
-                "CertificatePassword": {
-                  "type": "string",
-                  "description": "CertificatePassword"
-                }
-              }
-            }
-          }
-        ]
-      }
-    },
-    "/document/DocumentLoad": {
-      "post": {
-        "responses": {
-          "default": {
-            "description": "default",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "Error": {
-                  "type": "object",
-                  "properties": {
-                    "ResultCode": {
-                      "type": "string",
-                      "description": "ResultCode"
-                    },
-                    "ExtResultStatus": {
-                      "type": "string",
-                      "description": "ExtResultStatus"
-                    },
-                    "ExtResultMessage": {
-                      "type": "string",
-                      "description": "ExtResultMessage"
-                    },
-                    "InternalErrorId": {
-                      "type": "string",
-                      "description": "InternalErrorId"
-                    }
-                  },
-                  "description": "Error"
-                },
-                "RemainingTokens": {
-                  "type": "integer",
-                  "format": "int32",
-                  "description": "RemainingTokens"
-                },
-                "FileId": {
-                  "type": "string",
-                  "description": "FileId"
-                },
-                "DocumentFormat": {
-                  "type": "string",
-                  "description": "DocumentFormat"
-                },
-                "PageCount": {
-                  "type": "integer",
-                  "format": "int32",
-                  "description": "PageCount"
-                },
-                "ThumbnailData": {
-                  "type": "string",
-                  "description": "ThumbnailData"
-                }
-              }
-            }
-          }
-        },
-        "summary": "Document Load",
-        "description": "Loads the provided document file.",
-        "operationId": "DocumentLoad",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": false,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "Content": {
-                  "type": "string",
-                  "format": "byte",
-                  "description": "Content"
-                }
-              }
-            }
-          }
-        ]
-      }
-    },
-    "/pdf/SaveDocument": {
-      "post": {
-        "responses": {
-          "default": {
-            "description": "default",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "Error": {
-                  "type": "object",
-                  "properties": {
-                    "ResultCode": {
-                      "type": "string",
-                      "description": "ResultCode"
-                    },
-                    "ExtResultStatus": {
-                      "type": "string",
-                      "description": "ExtResultStatus"
-                    },
-                    "ExtResultMessage": {
-                      "type": "string",
-                      "description": "ExtResultMessage"
-                    },
-                    "InternalErrorId": {
-                      "type": "string",
-                      "description": "InternalErrorId"
-                    }
-                  },
-                  "description": "Error"
-                },
-                "RemainingTokens": {
-                  "type": "integer",
-                  "format": "int32",
-                  "description": "RemainingTokens"
-                },
-                "Data": {
-                  "type": "string",
-                  "format": "byte",
-                  "description": "Data"
-                },
-                "FileName": {
-                  "type": "string",
-                  "description": "FileName"
-                }
-              }
-            }
-          }
-        },
-        "summary": "Save Document",
-        "description": "Saves a previously uploaded document as PDF, and sends the file data in a JSON-serialized object.",
-        "operationId": "SaveDocument",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": false,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "FileId": {
-                  "type": "string",
-                  "description": "FileId"
-                }
-              }
-            }
-          }
-        ]
-      }
-    }
-  },
-  "definitions": {},
-  "parameters": {},
-  "responses": {},
-  "securityDefinitions": {
-    "API Key": {
-      "type": "apiKey",
-      "in": "header",
-      "name": "X-PassportPDF-API-Key"
-    }
-  },
-  "security": [
-    {
-      "API Key": []
-    }
-  ],
-  "tags": []
-}
+swagger: '2.0'
+info:
+  title: PassportPDF API
+  description: >-
+    Operations for loading, converting, saving, signing and extracting content
+    from documents.
+  version: '1.0'
+host: passportpdfapi.com
+basePath: /api/
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+securityDefinitions:
+  api_key:
+    type: apiKey
+    in: header
+    name: X-PassportPDF-API-Key
+security:
+  - api_key: []
+paths:
+  /pdf/LoadDocument:
+    post:
+      summary: Convert to PDF
+      description: >-
+        Imports the provided document as PDF. Supported formats include Office
+        documents, images, and others.
+      operationId: LoadDocumentAsPDF
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              Content:
+                type: string
+                format: byte
+                description: Base64-encoded original document content.
+              FileName:
+                type: string
+                description: File name including extension.
+      responses:
+        default:
+          description: Conversion completed.
+          schema:
+            type: object
+            properties:
+              Error:
+                type: object
+                properties:
+                  ResultCode:
+                    type: string
+                  ExtResultStatus:
+                    type: string
+                  ExtResultMessage:
+                    type: string
+                  InternalErrorId:
+                    type: string
+              RemainingTokens:
+                type: integer
+                format: int32
+              FileId:
+                type: string
+              DocumentFormat:
+                type: string
+              PageCount:
+                type: integer
+                format: int32
+              ThumbnailData:
+                type: string
+  /document/DocumentLoad:
+    post:
+      summary: Load Original Document
+      description: Loads a document to obtain a FileId for further processing.
+      operationId: DocumentLoad
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              Content:
+                type: string
+                format: byte
+                description: Base64-encoded file.
+      responses:
+        default:
+          description: Document loaded.
+          schema:
+            type: object
+            properties:
+              Error:
+                type: object
+                properties:
+                  ResultCode:
+                    type: string
+                  ExtResultStatus:
+                    type: string
+                  ExtResultMessage:
+                    type: string
+                  InternalErrorId:
+                    type: string
+              RemainingTokens:
+                type: integer
+                format: int32
+              FileId:
+                type: string
+              DocumentFormat:
+                type: string
+              PageCount:
+                type: integer
+                format: int32
+              ThumbnailData:
+                type: string
+  /pdf/SaveDocument:
+    post:
+      summary: Download PDF
+      description: >-
+        Saves a previously uploaded or converted document as PDF and returns the
+        PDF bytes.
+      operationId: SaveDocument
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              FileId:
+                type: string
+                description: The FileId of the PDF document.
+      responses:
+        default:
+          description: PDF binary returned.
+          schema:
+            type: object
+            properties:
+              Error:
+                type: object
+                properties:
+                  ResultCode:
+                    type: string
+                  ExtResultStatus:
+                    type: string
+                  ExtResultMessage:
+                    type: string
+                  InternalErrorId:
+                    type: string
+              RemainingTokens:
+                type: integer
+                format: int32
+              Data:
+                type: string
+                format: byte
+              FileName:
+                type: string
+  /pdf/ConvertToPDFA:
+    post:
+      summary: Convert PDF to PDF/A
+      description: Converts a PDF to ISO-compliant PDF/A format.
+      operationId: ConvertToPDFA
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              FileId:
+                type: string
+      responses:
+        default:
+          description: PDF/A conversion complete.
+          schema:
+            type: object
+            properties:
+              Error:
+                type: object
+                properties:
+                  ResultCode:
+                    type: string
+                  ExtResultStatus:
+                    type: string
+                  ExtResultMessage:
+                    type: string
+                  InternalErrorId:
+                    type: string
+              RemainingTokens:
+                type: integer
+                format: int32
+  /pdf/ExtractText:
+    post:
+      summary: Extract Text
+      description: Extracts text from a PDF document.
+      operationId: ExtractText
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              FileId:
+                type: string
+      responses:
+        default:
+          description: Text extracted.
+          schema:
+            type: object
+            properties:
+              Error:
+                type: object
+                properties:
+                  ResultCode:
+                    type: string
+                  ExtResultStatus:
+                    type: string
+                  ExtResultMessage:
+                    type: string
+                  InternalErrorId:
+                    type: string
+              RemainingTokens:
+                type: integer
+                format: int32
+              Text:
+                type: string
+                description: Extracted text content.
+  /pdf/DigiSign:
+    post:
+      summary: Digital Signature
+      description: Digitally signs the PDF using the provided certificate.
+      operationId: DigiSign
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              FileId:
+                type: string
+              CertificateData:
+                type: string
+                format: byte
+              CertificatePassword:
+                type: string
+      responses:
+        default:
+          description: Digital signature applied.
+          schema:
+            type: object
+            properties:
+              Error:
+                type: object
+                properties:
+                  ResultCode:
+                    type: string
+                  ExtResultStatus:
+                    type: string
+                  ExtResultMessage:
+                    type: string
+                  InternalErrorId:
+                    type: string
+              RemainingTokens:
+                type: integer
+                format: int32
+  /pdf/ClosePDF:
+    post:
+      summary: Close Document
+      description: Releases server resources for a FileId.
+      operationId: ClosePDF
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              FileId:
+                type: string
+      responses:
+        default:
+          description: Document closed.
+          schema:
+            type: object
+            properties:
+              Error:
+                type: object
+                properties:
+                  ResultCode:
+                    type: string
+                  ExtResultStatus:
+                    type: string
+                  ExtResultMessage:
+                    type: string
+                  InternalErrorId:
+                    type: string
+              RemainingTokens:
+                type: integer
+                format: int32
+definitions: {}
