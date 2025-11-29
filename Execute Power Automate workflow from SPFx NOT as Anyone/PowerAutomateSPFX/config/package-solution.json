@@ -1,0 +1,47 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "power-automate-spfx-client-side-solution",
+    "id": "808c9e90-6714-4ae5-8b5c-c96b1410220b",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.21.1",
+      "webApiPermissionRequests": [
+      {
+        "resource": "Microsoft Flow Service",
+        "scope": "User"
+      }
+    ]     
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "power-automate-spfx description"
+      },
+      "longDescription": {
+        "default": "power-automate-spfx description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "power-automate-spfx Feature",
+        "description": "The feature that activates elements of the power-automate-spfx solution.",
+        "id": "8b67f4bf-2990-43d9-a6d8-67a2460c0c37",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  
+  "paths": {
+    "zippedPackage": "solution/power-automate-spfx.sppkg"
+  }
+}

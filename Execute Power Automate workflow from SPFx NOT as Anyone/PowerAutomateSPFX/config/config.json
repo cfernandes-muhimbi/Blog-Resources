@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "power-automate-spfx-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/powerAutomateSpfx/PowerAutomateSpfxWebPart.js",
+          "manifest": "./src/webparts/powerAutomateSpfx/PowerAutomateSpfxWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "PowerAutomateSpfxWebPartStrings": "lib/webparts/powerAutomateSpfx/loc/{locale}.js"
+  }
+}
