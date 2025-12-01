@@ -7,19 +7,19 @@ It enables fast, secure, and scalable document rendering for modern web applicat
 
 ---
 
-## 📌 **What Is the DWS Viewer API?**
+##  **What Is the DWS Viewer API?**
 
 The **DWS Viewer API** is a cloud service that streams document content directly to the **Nutrient Web SDK**.
 Instead of the browser loading documents locally, DWS handles rendering, security, and complex document operations in the cloud.
 
 ---
 
-## 🚀 **Why Use the DWS Viewer API?**
+##  **Why Use the DWS Viewer API?**
 
 The DWS Viewer API enhances the Nutrient Web SDK by providing:
 
 
-## 🧩 **How It Fits with the Nutrient Web SDK**
+##  **How It Fits with the Nutrient Web SDK**
 
 You still use the Web SDK in your frontend via:
 
@@ -43,11 +43,11 @@ But instead of loading files from local URLs, SharePoint, or OneDrive, your view
 4. **Load the Document Using the Web SDK**
    Pass your DWS token into the Web SDK `load` configuration (see official API docs for exact params).
 
-📘 **Guide:**
+ **Guide:**
 [https://www.nutrient.io/guides/document-engine/as-a-service/dws-viewer-api/](https://www.nutrient.io/guides/document-engine/as-a-service/dws-viewer-api/)
 
 
-## 🔌 **Integrating with Power Automate (Low-Code / No-Code)**
+##  **Integrating with Power Automate (Low-Code / No-Code)**
 
 The **Nutrient Viewer API** integrates seamlessly with low-code workflows.
 Common use cases include:
@@ -62,7 +62,7 @@ Use Nutrient connectors to generate PDFs, perform OCR, or manipulate documents �
 
 ---
 
-## 📷 **Architecture Diagram (Power Automate + Viewer API)**
+##  **Architecture Diagram (Power Automate + Viewer API)**
 
 You can include your provided architecture or link it:
 
@@ -70,7 +70,7 @@ You can include your provided architecture or link it:
 
 ---
 
-## 📚 **Key Links & Further Reading**
+##  **Key Links & Further Reading**
 
 ### **DWS Viewer API Overview**
 
@@ -83,7 +83,7 @@ You can include your provided architecture or link it:
 
 ---
 
-## 🧭 **Summary**
+##  **Summary**
 
 The **Nutrient Viewer API (DWS Viewer API)** is your cloud-based backend for fast, secure, and scalable document rendering.
 Combined with the **Nutrient Web SDK**, it gives you:
