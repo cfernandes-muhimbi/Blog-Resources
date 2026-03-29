@@ -1,0 +1,130 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Nutrient Document Signing",
+    "description": "Sign PDF documents using the Nutrient API with CAdES digital signatures.",
+    "version": "1.0"
+  },
+  "host": "api.nutrient.io",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "multipart/form-data"
+  ],
+  "produces": [
+    "application/pdf"
+  ],
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "Authorization"
+    }
+  },
+  "security": [
+    {
+      "api_key": []
+    }
+  ],
+  "paths": {
+    "/sign": {
+      "post": {
+        "summary": "Sign PDF Document",
+        "description": "Applies a digital CAdES signature to a PDF document.",
+        "operationId": "SignDocument",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/pdf"
+        ],
+        "parameters": [
+          {
+            "name": "file",
+            "in": "formData",
+            "required": true,
+            "type": "file",
+            "description": "The source PDF document to be signed.",
+            "x-ms-summary": "PDF File"
+          },
+          {
+            "name": "data",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": "JSON string containing the signature configuration.",
+            "x-ms-summary": "Signature Configuration (JSON)"
+          },
+          {
+            "name": "image",
+            "in": "formData",
+            "required": false,
+            "type": "file",
+            "description": "PNG image of the signer's handwritten signature.",
+            "x-ms-summary": "Signature Image (PNG)"
+          },
+          {
+            "name": "graphicImage",
+            "in": "formData",
+            "required": false,
+            "type": "file",
+            "description": "PNG graphic or logo image for the signature appearance.",
+            "x-ms-summary": "Graphic Image (PNG)"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Signed PDF document",
+            "schema": {
+              "type": "string",
+              "format": "binary"
+            }
+          },
+          "400": {
+            "description": "Bad Request - one or more input parameters are invalid.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized - the API key is missing or invalid.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - the document could not be processed.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ErrorResponse": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string",
+          "description": "Machine-readable error code.",
+          "x-ms-summary": "Error Code"
+        },
+        "details": {
+          "type": "string",
+          "description": "Human-readable error message.",
+          "x-ms-summary": "Error Details"
+        }
+      }
+    }
+  }
+}
